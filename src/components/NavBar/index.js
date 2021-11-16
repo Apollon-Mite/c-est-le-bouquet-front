@@ -25,7 +25,7 @@ const NavBar = ({
   return (
     <header>
       <nav className={navClass}>
-        <Link className="logo-link" to="/" onClick={closeBurger}><img className="nav__logo" src={Logo} alt="icone bouquet" /></Link>
+        <Link to="/" onClick={closeBurger}><img className="logo-link nav__logo" src={Logo} alt="icone bouquet" /></Link>
         <div className="nav__content">
           <ul className="nav__links">
             <li className="nav__link"> <NavLink exact to="/">ACCUEIL</NavLink></li>

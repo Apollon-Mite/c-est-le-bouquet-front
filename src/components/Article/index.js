@@ -12,7 +12,7 @@ const Article = () => (
         <p>
           <i>C’est le bouquet!</i> est né du désir de participer à
           <em> relocaliser la production et la vente de fleurs</em>, en proposant un outil pour
-          <em> valoriser la filière française, faciliter les échanges</em>
+          <em> valoriser la filière française, faciliter les échanges </em>
           entre producteurs et particuliers, et favoriser l’achat de
           <em> fleurs locales et de saison.</em>
         </p>
