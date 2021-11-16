@@ -53,7 +53,7 @@ export default (values) => {
     errors.phone_number = 'Le numéro de téléphone doit comprendre 10 chiffres.';
   }
   if (!values.gsc) {
-    errors.gsc = 'Vous devez acceptez les conditions générales de vente.';
+    errors.gsc = 'Vous devez accepter les conditions générales de vente.';
   }
   return errors;
 };

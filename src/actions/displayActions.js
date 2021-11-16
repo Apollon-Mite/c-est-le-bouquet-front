@@ -8,6 +8,7 @@ export const DECREASE_CART_AMOUNT = 'DECREASE_CART_AMOUNT';
 export const TOGGLE_PRODUCTS = 'TOGGLE_PRODUCTS';
 export const TOGGLE_BURGER = 'TOGGLE_BURGER';
 export const CLOSE_BURGER = 'CLOSE_BURGER';
+export const SET_LOCATION_HOME = 'SET_LOCATION_HOME';
 
 export const toggleAuthModal = () => ({
   type: TOGGLE_AUTH_MODAL,
@@ -48,4 +49,9 @@ export const toggleBurger = () => ({
 
 export const closeBurger = () => ({
   type: CLOSE_BURGER,
+});
+
+export const setLocationHome = (value) => ({
+  type: SET_LOCATION_HOME,
+  value,
 });

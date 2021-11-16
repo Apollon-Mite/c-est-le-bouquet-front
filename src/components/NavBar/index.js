@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import Logo from 'src/assets/logo-bouquet.png';
@@ -7,7 +7,17 @@ import { NavLink, Link } from 'react-router-dom';
 import AuthModal from 'src/containers/AuthModal';
 
 const NavBar = ({
-  isLogged, toggleAuthModal, logOut, changeBackground, navBackground, userType, cartAmount, toggleBurger, burgerOpen, closeBurger,
+  isLogged,
+  toggleAuthModal,
+  logOut,
+  changeBackground,
+  navBackground,
+  userType,
+  cartAmount,
+  toggleBurger,
+  burgerOpen,
+  closeBurger,
+  locationHome,
 }) => {
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -15,7 +25,25 @@ const NavBar = ({
     });
   });
 
-  const navClass = navBackground || burgerOpen ? 'nav nav--active' : 'nav';
+  // let navClass;
+  const [navClass, setNaveClass] = useState('nav');
+  useEffect(() => {
+    if (navBackground || burgerOpen) {
+      // navClass = 'nav nav--active';
+      setNaveClass('nav nav--active');
+    }
+    else if (!(navBackground || burgerOpen) && locationHome) {
+      // navClass = 'nav home-active';
+      setNaveClass('nav nav--home-active');
+    }
+    else if (!(navBackground || burgerOpen || locationHome)) {
+      // navClass = 'nav';
+      setNaveClass('nav');
+    }
+  }, [navBackground, burgerOpen, locationHome]);
+
+  // const scrollNavClass = navBackground || burgerOpen ? 'nav nav--active' : 'nav';
+  // const pathNavClass = locationHome ? 'home' : '';
   const joinUs = isLogged && userType === 'seller' ? null : <li className="nav__link"> <NavLink exact to="/inscription/pro">DEVENIR PARTENAIRE</NavLink></li>;
   const joinUsBurger = isLogged && userType === 'seller' ? null : <li className="burger__link"> <NavLink onClick={toggleBurger} exact to="/inscription/pro">DEVENIR PARTENAIRE</NavLink></li>;
   const cartClass = isLogged && userType === 'seller' ? 'nav__icon nav__icon--disabled' : 'nav__icon';
@@ -183,5 +211,6 @@ NavBar.propTypes = {
   toggleBurger: PropTypes.func.isRequired,
   burgerOpen: PropTypes.bool.isRequired,
   closeBurger: PropTypes.func.isRequired,
+  locationHome: PropTypes.bool.isRequired,
 };
 export default NavBar;

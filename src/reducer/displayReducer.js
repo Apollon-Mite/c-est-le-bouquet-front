@@ -9,6 +9,7 @@ import {
   DECREASE_CART_AMOUNT,
   TOGGLE_BURGER,
   CLOSE_BURGER,
+  SET_LOCATION_HOME,
 } from 'src/actions/displayActions';
 
 import {
@@ -31,6 +32,7 @@ const initialState = {
   historyOpen: false,
   currentOrdersOpen: false,
   cartAmount: ifNullOrNegativeReturnZero(JSON.parse(localStorage.getItem('cartAmount'))),
+  locationHome: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -89,6 +91,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         burgerOpen: false,
+      };
+    case SET_LOCATION_HOME:
+      return {
+        ...state,
+        locationHome: action.value,
       };
     default:
       return state;

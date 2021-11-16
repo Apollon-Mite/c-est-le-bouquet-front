@@ -1,10 +1,9 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // == Import
-import './styles.scss';
 import ScrollToTop from 'src/functions/scrollToTop';
 import SignupFormCustomer from 'src/containers/SignupFormCustomer';
 import SignupFormSeller from 'src/containers/SignupFormSeller';
@@ -13,30 +12,29 @@ import SingleProduct from 'src/containers/SingleProduct';
 import Products from 'src/containers/Products';
 import SellerPage from 'src/containers/SellerPage';
 import Cart from 'src/containers/Cart';
+import OurProducers from 'src/containers/OurProducers';
 import OrderPass from 'src/containers/OrderPass';
-import Header from '../Header';
-import Footer from '../Footer';
-import Article from '../Article';
-import NavBar from '../../containers/NavBar';
-import NotFound from '../NotFound';
+import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
+import Article from 'src/components/Article';
+import NavBar from 'src/containers/NavBar';
+import NotFound from 'src/components/NotFound';
+import AboutUs from 'src/components/AboutUs';
+import Dashboard from 'src/containers/Dashboard';
+import OrderProducts from 'src/containers/OrderProducts/';
 import Spinner from './Spinner';
-import OurProducers from '../../containers/OurProducers';
-import AboutUs from '../AboutUs';
 
 // == Import
 import './styles.scss';
-import Dashboard from '../../containers/Dashboard';
-import OrderProducts from 'src/containers/OrderProducts/';
 
-
-const App = ({ init, loading }) => {
+const App = ({ init, loading, setLocationHome }) => {
   useEffect(() => {
     init();
   }, []);
 
   return (
     <div className="app-container">
-      <ScrollToTop />
+      <ScrollToTop setLocationHome={setLocationHome} />
       <NavBar />
       {
         (loading) && <Spinner />
@@ -97,6 +95,7 @@ const App = ({ init, loading }) => {
 App.propTypes = {
   loading: PropTypes.bool.isRequired,
   init: PropTypes.func.isRequired,
+  setLocationHome: PropTypes.func.isRequired,
 };
 // == Export
 export default App;

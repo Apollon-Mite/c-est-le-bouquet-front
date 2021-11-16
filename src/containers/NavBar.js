@@ -15,6 +15,7 @@ const mapState = (state) => {
     navBackground,
     cartAmount,
     burgerOpen,
+    locationHome,
   } = state.display;
 
   return {
@@ -23,6 +24,7 @@ const mapState = (state) => {
     userType,
     cartAmount,
     burgerOpen,
+    locationHome,
   };
 };
 
