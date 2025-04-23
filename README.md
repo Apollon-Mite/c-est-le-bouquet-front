@@ -75,6 +75,6 @@ Thibaut Jouet - [@Linkedin](https://fr.linkedin.com/in/thibaut-jouet-18793219b)
 </br>
 Jeanne Lemière - [@Linkedin](https://www.linkedin.com/in/jeanne-lemi%C3%A8re-a4b36a1bb/)
 </br>
-Abdoula Voraev - [@Linkedin](https://fr.linkedin.com/in/abdoula-voraev-306a51171)
+Abdoula Voraev - [@Linkedin](https://www.linkedin.com/in/abdoula-voraev/)
 </br>
 Djabraïl Voraev - [@Linkedin](https://fr.linkedin.com/in/djabrail-voraev-22b8b6207)
